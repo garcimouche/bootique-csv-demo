@@ -1,2 +1,2 @@
 csv:
-    csvFilePath: sales.csv
+  skipLines: 1
