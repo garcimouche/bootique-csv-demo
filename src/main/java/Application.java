@@ -25,7 +25,9 @@ public class Application implements Module {
 		CSVModule.extend(binder)
 		    .addRowListener(s -> out.println("l1 -> "+asList(s)))
 		    .addRowListener(s -> out.println("l2 -> "+asList(s)))
-		    .addDocumentListener(s -> out.println("ALL rows\n" + s.stream().map(Arrays::asList).collect(toList())));
+		    .addDocumentListener(s -> out.println("ALL rows\n" + s.stream().map(Arrays::asList).collect(toList())))
+		    .addBeanListener(lb -> out.println(lb), MyBean.class)
+		    .addBeanListener(lb -> out.println(lb), MyBean2.class);
 	}
 	
 }

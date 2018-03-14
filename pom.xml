@@ -44,6 +44,8 @@
 		<dependency>
 			<groupId>io.bootique</groupId>
 			<artifactId>bootique</artifactId>
+			<!-- take the local m2 version -->
+			<version>0.25-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>io.bootique.csv</groupId>
