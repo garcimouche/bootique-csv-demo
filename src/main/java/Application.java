@@ -11,7 +11,7 @@ import io.bootique.Bootique;
 import io.bootique.csv.CSVModule;
 
 /**
- * Demo appliction for bootique-csv module
+ * Demo application for bootique-csv module
  * @author franck
  */
 public class Application implements Module {
