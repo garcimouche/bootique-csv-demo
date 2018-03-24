@@ -3,6 +3,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;
@@ -27,7 +28,12 @@ public class Application implements Module {
 		    .addRowListener(s -> out.println("l2 -> "+asList(s)))
 		    .addDocumentListener(s -> out.println("ALL rows\n" + s.stream().map(Arrays::asList).collect(toList())))
 		    .addBeanListener(lb -> out.println(lb), MyBean.class)
-		    .addBeanListener(lb -> out.println(lb), MyBean2.class);
+		    .addBeanListener(this::callback, MyBean2.class);
 	}
+	
+	private void callback (List<MyBean2> bs){
+	    out.println(bs.toString());
+	}
+	
 	
 }
